@@ -1,0 +1,73 @@
+Hategan Florin George - 06.05.2019
+
+
+Project Title
+	Image processing
+
+
+Getting Started
+	This project is a request I received with the list of the actual tasks in 
+the tasks.txt file.General idea is to bring certain images to a specific format.
+	
+
+Prerequisites
+	What things you need to install the software and how to install them :
+
+# gifsicle   3*)
+	sudo apt-get install gifsicle
+
+# libvips (version 8.2.2 or greater)  1*)
+	sudo apt install libvips libvips-dev
+	sudo apt install libvips-tools
+
+
+Running the tests
+	make clone => bring the pictures to the current directory
+	make clean => remove output pictures
+	make run   => runs script and tests for picture size
+
+
+Problems during implementation
+	Installed libvips with the instructions above and got stuck with the 8.2.2
+version (actual stable one is around 8.7).This restricted the functionalities
+I had access to so I couldn't use things like --smartcrop or ! when specifing 
+size( link 2*) below ).
+	The lack of ! was quite important ( ! forces the new image to the specified 
+size) and I couldn't resize the pictures to exactly 150x150. I didn't
+have time to ask and wait for an answer on this regard so I just
+implement it 2 ways : first one crops the image to the lower size (height or 
+width) and then scales it. The second one was to scale it out of the bat so the
+image is in the 150x150 box but one of its sizes might be lower than 150. 
+
+
+Break down into end to end tests
+	Disclaimer!It was less than a day of work as this project got squeezed in 
+between other projects and homework so I apologize in advance for any coding
+style inconsistencies, logical blunders and especially Readme typos.
+	I used the library that was highlited in the task description and preffered
+bash as it can be fast to use and I don't have experience with files managment
+in python and learning something else would be too time consuming for me atm.
+	I used vipsthumbnail as the size requested was rather small.The main dilema
+described above regarding the size pushed me to make 2 versions of the output 
+images ( even if the initial image was a square in which the 2 versions are 
+identical ).
+	The code is quite simple to understand so I will focus on the decision 
+making.I keept the images 1 and 5 to their original formats as they are all the
+way compatible with the browsers.For images 2 and 4 webp is much more efficient
+if it is just chrome compatible and 3 has to be kept a gif.
+	Image 3 had no support in 1*) library so I went online and found a simple
+fix 3*).I kept animation, transparency, quality (where I could) but I am not 
+aware if there should be any more features I should have checked for.
+	The script only checks if the size of the bigger picture (version 1) fits
+the size described by the tasks.I hope I managed to cover what you had in mind
+and thank you for your time!
+
+
+Authors
+	Hategan Florin George
+
+
+Acknowledgments
+	1* https://github.com/libvips/libvips
+	2* http://libvips.github.io/libvips/API/current/Using-vipsthumbnail.md.html
+	3* https://davidwalsh.name/resize-animated-gif	

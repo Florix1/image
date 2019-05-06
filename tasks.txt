@@ -1,0 +1,15 @@
+Tasks:
+
+Avem următorul set de imagini https://github.com/codeinwp/sample-images ce vor fi folosite ca surse. Ele trebuiesc procesate după cum urmează:
+
+1)Toate vor fi aduse la dimensiunea de 150x150
+
+2)Formatul final al image1.jpg și image5.png trebuie să fie compatibil cu fiecare din browserele Safari, Chrome, Firefox, Edge.
+
+3)Formatul final al image3.gif, image4.png și image2.svg poate fi compatibil doar cu Google Chrome, nu e nevoie sa meargă și pe celelalte 3 ( Firefox, Edge, Safari).
+
+4)Imaginile rezultat trebuie să aibă o dimensiune( în kB) cel putin cu 70% mai mică decât versiunea inițială.
+
+5)Formatul inițial al imaginilor nu trebuie neapărat păstrat, dar calitațile imaginilor da ( transparența, animația, etc).
+
+Pentru procesarea imaginilor poți folosi orice fel de metodă, noi iți recomandăm următoarea bibliotecă: https://github.com/libvips/libvips 

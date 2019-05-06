@@ -1,4 +1,7 @@
-all: clone
+all: clean run
+
+run: 
+	./checker.sh
 
 clone: clean
 		cp sample-images-master/image1.jpg 1.jpg
@@ -7,9 +10,5 @@ clone: clean
 		cp sample-images-master/image4.png 4.png
 		cp sample-images-master/image5.png 5.png
 
-clean: 
-	rm -f *$([1-5]).*
-
-
-
-
+clean:
+	rm -f *_$([1-5])*
