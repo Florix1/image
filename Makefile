@@ -1,6 +1,6 @@
-all: clean run
+all: clean_all run
 
-run: 
+run: clone
 	./checker.sh
 
 clone: clean
@@ -12,3 +12,6 @@ clone: clean
 
 clean:
 	rm -f *_$([1-5])*
+
+clean_all: clean
+	rm -f [1-5].*

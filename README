@@ -25,7 +25,7 @@ Running the tests
 	make clone => bring the pictures to the current directory
 	make clean => remove output pictures
 	make run   => runs script and tests for picture size
-
+	make clean_all => removes the cloned images too
 
 Problems during implementation
 	Installed libvips with the instructions above and got stuck with the 8.2.2
